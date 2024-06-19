@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { getArticles, getArticleByID } from '../../api';
-import Article from './Article';
+import { getArticles } from '../../api';
+import ArticleStub from './ArticleStub';
 
 function ArticlesList({ articles, setArticles }) {
 
@@ -9,13 +9,7 @@ function ArticlesList({ articles, setArticles }) {
     useEffect(()=> {
         getArticles()
         .then((fetchedArticles) => {
-            return fetchedArticles.map((article) => {
-                return getArticleByID(article.article_id)
-            })
-        }).then((articlePromises) => {
-            return Promise.all(articlePromises)
-        }).then((articles) => {
-            setArticles(articles);
+            setArticles(fetchedArticles);
             setIsLoading(false);
         })
     }, []);
@@ -25,7 +19,7 @@ function ArticlesList({ articles, setArticles }) {
         <div className='articleBox'>
             <ul className = "articlesList">
                 {articles.map((article) => {
-                    return <Article key={article.article_id} article={article} />
+                    return <ArticleStub key={article.article_id} article={article} />
                 })}
             </ul>
         </div>
