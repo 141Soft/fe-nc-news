@@ -24,3 +24,11 @@ export const getCommentsByID = (id) => {
         return data.comments;
     })
 }
+
+export const patchArticleVotesByID = (id, score) => {
+    const patchBody = { inc_votes: score }
+    return newsApi.patch(`/articles/${id}`, patchBody)
+    .then(({ data }) => {
+        return data.article.votes;
+    })
+}
