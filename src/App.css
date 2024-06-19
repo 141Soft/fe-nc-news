@@ -36,7 +36,7 @@ h1.title {
 
 .article {
     font-family: 'Courier New', Courier, monospace;
-    width: 90%;
+    width: 100%;
     list-style-type: none;
 }
 
@@ -44,6 +44,7 @@ h3.article {
     width:100%;
     background-color: black;
     color: white;
+    height: 2rem;
 }
 
 a.article {
@@ -63,4 +64,30 @@ a.article {
     width:70%;
     margin: auto;
     margin-top: 5vh;
+}
+
+.commentsBox {
+    margin-top: 5rem;
+    width:100%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.commentsList {
+    padding-left: 0;
+    margin-left: 0;
+    display: inline-block;
+}
+
+.comment {
+    list-style-type: none;
+}
+
+h4.comment {
+    color: white;
+    background-color: black;
+}
+
+.commentTimestamp {
+    float: right;
+    color: white;
 }
