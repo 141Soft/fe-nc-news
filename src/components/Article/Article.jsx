@@ -12,14 +12,14 @@ function Article({article}) {
         event.preventDefault();
         let voteType = 0;
         event.target.name === "positive" ? voteType = 1 : voteType = -1;
-        setVotes(votes += voteType)
+        setVotes(votes + voteType)
 
         patchArticleVotesByID(article.article_id, voteType)
         .then((totalVotes) => {
             setVotes(totalVotes)
         }).catch(() => {
             setErr(true)
-            setVotes(votes -= voteType)
+            setVotes(votes - voteType)
         })
     }
 

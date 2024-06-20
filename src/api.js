@@ -32,3 +32,14 @@ export const patchArticleVotesByID = (id, score) => {
         return data.article.votes;
     })
 }
+
+export const postCommentByArticleID = (id, username, body) => {
+    const postBody = {
+        username: username,
+        body: body,
+    }
+    return newsApi.post(`/articles/${id}/comments`, postBody)
+    .then(({ data }) => {
+        return data
+    })
+}
