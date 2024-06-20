@@ -15,9 +15,7 @@ function Article({article}) {
         setVotes(votes + voteType)
 
         patchArticleVotesByID(article.article_id, voteType)
-        .then((totalVotes) => {
-            setVotes(totalVotes)
-        }).catch(() => {
+        .catch(() => {
             setErr(true)
             setVotes(votes - voteType)
         })
