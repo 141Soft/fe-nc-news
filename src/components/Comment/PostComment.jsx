@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { UserContext } from '../../contexts/UserContext'
 import { postCommentByArticleID } from "../../api";
 
-function PostComment({article_id}) {
+function PostComment({article_id, comments, setComments}) {
     const [newComment, setNewComment] = useState('');
     const [err, setErr] = useState(false);
     const [hasPosted, setHasPosted] = useState(false);
@@ -19,7 +19,8 @@ function PostComment({article_id}) {
         setHasPosted(true);
 
         postCommentByArticleID(article_id, user, newComment)
-        .then(() => {
+        .then((postedComment) => {
+            setComments([...comments, postedComment])
             setHasPosted(false);
         })
         .catch(() => {

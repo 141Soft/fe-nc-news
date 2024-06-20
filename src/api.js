@@ -54,7 +54,7 @@ export const postCommentByArticleID = (id, username, body) => {
     }
     return newsApi.post(`/articles/${id}/comments`, postBody)
     .then(({ data }) => {
-        return data
+        return data.comment;
     })
 }
 

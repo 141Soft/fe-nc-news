@@ -13,9 +13,6 @@ function Comment({comment}) {
         setIsDeleted(true);
 
         deleteCommentByID(comment.comment_id)
-        .then(() => {
-            setIsDeleted(true);
-        })
         .catch(() => {
             setIsDeleted(false);
             setErr(true);
