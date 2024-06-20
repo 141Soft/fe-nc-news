@@ -1,5 +1,6 @@
 import { patchArticleVotesByID } from "../../api";
 import { useState } from 'react';
+import { Link } from 'react-router-dom'
 
 function Article({article}) {
 
@@ -24,7 +25,7 @@ function Article({article}) {
     return (
         <li className="article">
             <h3 className="article">{article.title}</h3>
-            <h4><span className="topicLine">{article.topic}</span> <span className ="byline">{article.author}</span></h4>
+            <h4><span className="topicLine"><Link className='link' to={`/?topic=${article.topic}`}>{article.topic}</Link></span> <span className ="byline">{article.author}</span></h4>
             <p className = "articleBody">{article.body}</p>
             <p className="timestamp">{article.created_at.slice(0,10)}</p>
             <p>Score:{votes} Replies:{article.comment_count}</p>
