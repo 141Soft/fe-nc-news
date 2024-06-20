@@ -6,7 +6,7 @@ function ArticleStub({article}) {
             <Link className='link' to={`/articles/${article.article_id}`}>
             <h3 className='article'>{article.title}</h3>
             </Link>
-            <h4><span className="topicLine">{article.topic}</span> <span className ="byline">{article.author}</span></h4>
+            <h4><span className="topicLine"><Link className='link' to={`/?topic=${article.topic}`}>{article.topic}</Link></span> <span className ="byline">{article.author}</span></h4>
             <p>Score:{article.votes} Replies:{article.comment_count}</p>
         </li>
     )

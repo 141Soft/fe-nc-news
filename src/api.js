@@ -18,6 +18,20 @@ export const getArticleByID = (id) => {
     })
 }
 
+export const getArticlesByTopic = (topic) => {
+    return newsApi.get(`/articles?topic=${topic}`)
+    .then(({ data }) => {
+        return data.articles;
+    })
+}
+
+export const getTopics = () => {
+    return newsApi.get('/topics')
+    .then(({ data }) => {
+        return data.topics;
+    })
+}
+
 export const getCommentsByID = (id) => {
     return newsApi.get(`/articles/${id}/comments`)
     .then(({ data }) => {
@@ -50,3 +64,4 @@ export const deleteCommentByID = (id) => {
         return data
     })
 }
+

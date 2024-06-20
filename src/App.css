@@ -94,4 +94,26 @@ h4.comment {
 
 .link {
     text-decoration: none;
+    color: inherit;
+}
+
+ul.topicsList {
+    text-decoration: none;
+    list-style-type: none;
+    margin: none;
+    padding: none;
+    color: white;
+    background-color: black;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: center;
+}
+
+li.topicsList {
+    text-align: center;
+    padding: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    font-weight: bold;
 }

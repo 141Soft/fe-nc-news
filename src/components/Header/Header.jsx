@@ -1,12 +1,16 @@
 import { Link } from 'react-router-dom'
+import TopicsList from '../Topics/TopicsList';
 
 function Header() {
     return(
-        <Link className='link' to="/">
-            <div className = "banner">
-                <h1 className = "title">News</h1>
-            </div>
-        </Link>
+        <div>
+            <Link className='link' to="/">
+                <div className = "banner">
+                    <h1 className = "title">News</h1>
+                </div>
+            </Link>
+            <TopicsList />
+        </div>
     )
 }
 

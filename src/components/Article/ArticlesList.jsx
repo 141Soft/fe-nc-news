@@ -1,18 +1,32 @@
 import { useEffect, useState } from 'react';
-import { getArticles } from '../../api';
+import { useSearchParams } from 'react-router-dom';
+import { getArticles, getArticlesByTopic } from '../../api';
 import ArticleStub from './ArticleStub';
 
 function ArticlesList({ articles, setArticles }) {
 
     const [isLoading, setIsLoading] = useState(true);
+    const [searchParams, setSearchParams] = useSearchParams();
 
     useEffect(()=> {
-        getArticles()
-        .then((fetchedArticles) => {
-            setArticles(fetchedArticles);
-            setIsLoading(false);
-        })
-    }, []);
+        if(searchParams.get("topic")){
+            getArticlesByTopic(searchParams.get("topic"))
+            .then((fetchedArticles) => {
+                setArticles(fetchedArticles);
+                setIsLoading(false);
+            })
+        }
+        else{
+            getArticles()
+            .then((fetchedArticles) => {
+                setArticles(fetchedArticles);
+                setIsLoading(false);
+            })
+        }
+
+
+        
+    }, [searchParams]);
 
     if(!isLoading)
     return (
