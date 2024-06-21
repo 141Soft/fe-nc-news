@@ -1,8 +1,35 @@
-# React + Vite
+# NC NEWS FE PROJECT
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+https://141newsproject.netlify.app/
 
-Currently, two official plugins are available:
+## ABOUT
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A react web application built as a front-end to the NC news server, the site allows the user to:
+
+- View articles
+- Filter articles by topic, number of comments/vote, date
+- Upvote articles they find interesting
+- Post comments to articles
+
+The back-end can be found here: https://github.com/141Soft/NC-News
+
+## RUNNING THIS PROJECT
+
+Minimum tested Node version: v21.7.3
+
+To run this project locally follow these steps:
+
+- Fork and clone the project found in this repo: https://github.com/141Soft/fe-nc-news
+- Navigate to the nc-news directory
+- Install required dependencies using npm install
+- Run the dev script using 'npm run dev' and use the url provided by vite to view the local version of the site
+
+### KNOWN ISSUES
+
+- Date sorting does not interact with order options
+- Sorting and order drop downs will not update on fire use of default option
+- Headings overrun containers on small window sizes
+
+### INFO
+
+This portfolio project was created as part of a Digital Skills Bootcamp in Software Engineering provided by [Northcoders](https://northcoders.com/)
