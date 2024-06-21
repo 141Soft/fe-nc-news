@@ -13,12 +13,12 @@ function CommentList({article_id}) {
             setComments(fetchedComments);
             setIsLoading(false);
         })
-    }, [comments]);
+    }, []);
 
     if(!isLoading)
     return (
         <div className='commentsBox'>
-            <PostComment article_id = {article_id}/>
+            <PostComment article_id = {article_id} comments={comments} setComments = {setComments}/>
             <h4>Comments:</h4>
             <ul className='commentsList'>
                 {comments.map((comment) => {

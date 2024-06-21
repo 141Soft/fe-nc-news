@@ -117,3 +117,7 @@ li.topicsList {
     padding-right: 3rem;
     font-weight: bold;
 }
+
+.articleSort {
+    font-family: 'Courier New', Courier, monospace;
+}
